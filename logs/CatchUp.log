@@ -1,0 +1,91 @@
+2021-10-03 14:03:30,446 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
+2021-10-03 14:03:42,329 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
+2021-10-03 14:09:22,794 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
+2021-10-03 14:14:37,947 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
+2021-10-03 14:38:17,798 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
+2021-10-03 14:38:24,393 ERROR: Exception on / [GET] [in /Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  [Previous line repeated 966 more times]
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/utils.py", line 544, in get
+    return self[key]
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/utils.py", line 582, in __getitem__
+    rv = self._mapping[key]
+RecursionError: maximum recursion depth exceeded in comparison
+2021-10-03 14:38:25,853 ERROR: Exception on /favicon.ico [GET] [in /Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1489, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1471, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/ctx.py", line 367, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/werkzeug/routing.py", line 2032, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1383, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/app.py", line 1323, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  [Previous line repeated 966 more times]
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/utils.py", line 544, in get
+    return self[key]
+  File "/Users/mariusrodderbjornoy/Desktop/CatchUp/venv/lib/python3.9/site-packages/jinja2/utils.py", line 582, in __getitem__
+    rv = self._mapping[key]
+RecursionError: maximum recursion depth exceeded in comparison
+2021-10-03 14:39:17,027 INFO: Catchup startup [in /Users/mariusrodderbjornoy/Desktop/CatchUp/app/__init__.py:44]
