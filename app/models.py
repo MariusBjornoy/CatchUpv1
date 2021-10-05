@@ -6,7 +6,33 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from app import db, login
+from password_strength import PasswordPolicy
+from password_strength import PasswordStats
 from app.search import add_to_index, remove_from_index, query_index
+
+policy = PasswordPolicy.from_names(
+    length=8,  # min length: 8
+    uppercase=1,  # need min. 2 uppercase letters
+    numbers=1,  # need min. 2 digits
+    strength=0.66 # need a password that scores at least 0.5 with its entropy bits
+)
+app.config['SECRET_KEY'] = '@#$%^&*('
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        password = request.form.get('password')
+        email = request.form.get('email')
+        stats = PasswordStats(password)
+        checkpolicy = policy.test(password)
+        if stats.strength() < 0.66:
+            print(stats.strength())
+            flash("Password not strong enough. Avoid consecutive characters and easily guessed words.")
+            return render_template('form.html')
+        else:
+            print(stats.strength())
+            return render_template('success.html')
+    return render_template('form.html')
 
 
 class SearchableMixin(object):
